@@ -1,11 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql, Link } from "gatsby";
 import Menu from "../components/Menu";
-import {MooseAtWork} from "../pages/image-constants";
+import BackgroundIcons from "../components/BackgroundIcons";
+import Landing from "../components/Landing";
 import "../css/styles.scss";
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, pathName = null }) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -51,7 +52,7 @@ const TemplateWrapper = ({ children }) => (
             color="#ff4400"
           />
           <meta name="theme-color" content="#fff" />
-
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta property="og:type" content="business.business" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:url" content="/" />
@@ -59,8 +60,7 @@ const TemplateWrapper = ({ children }) => (
         </Helmet>
 
         <div className="layout__logo">
-          <div className="layout__logo__text">Musango Wope</div>
-
+          <Link to="/" className="layout__logo__text">Musango Wope</Link>
         </div>
 
         <div className="layout__area">
@@ -68,10 +68,17 @@ const TemplateWrapper = ({ children }) => (
             <Menu />
           </div>
           <div className="layout__area__children">
-            {children}
+            <div className="animated fadeIn">
+              <BackgroundIcons />
+            </div>
+            {pathName === "/" ? <Landing /> : (
+              <div className="layout__area__children__content animated fadeIn">
+                {children}
+              </div>
+            )}
+
           </div>
         </div>
-
       </div>
     )}
   />

@@ -1,0 +1,19 @@
+.my-work {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    &__title {
+      font-size: x-large;
+    }
+
+    &__image {
+      max-width: 50px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

@@ -1,25 +1,21 @@
 import React from "react";
+import {Link} from "gatsby";
 
 const Menu = props => {
   return (
     <ul className="menu-list">
       <li className="menu-list__list-item-link">
-        <button>About Me</button>
+        <Link to="/about">About Me</Link>
       </li>
-
       <li className="menu-list__list-item-link">
-        <button>My Work</button>
+        <Link to="/my-work">My Work</Link>
       </li>
-
-
       <li className="menu-list__list-item-link">
-        <button>Blog</button>
+        <Link to="/about">Blog</Link>
       </li>
-
       <li className="menu-list__list-item-link">
-        <button>Connect with me</button>
+        <Link to="/about">Connect with me</Link>
       </li>
-
 
     </ul>
   );

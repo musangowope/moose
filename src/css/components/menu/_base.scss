@@ -6,7 +6,7 @@
   margin-left: 10px;
 
   &__list-item-link {
-    button {
+    a {
       text-transform: uppercase;
       clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
       border: none;
@@ -25,6 +25,7 @@
       cursor: pointer;
       &:hover, &:focus {
         background-color: #E63946;
+        color: white;
       }
     }
   }

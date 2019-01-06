@@ -1,3 +1,3 @@
-import MooseAtWorkImg from '../images/header-images/moose-working.svg'
+import ConstructionImg from '../images/about-me-images/work-progress.svg'
 
-export const MooseAtWork  = MooseAtWorkImg;
+export const Construction = ConstructionImg;
