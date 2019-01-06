@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { backgroundIcons } from './image-constants'
+import { backgroundIcons } from '../../image-constants'
 import { TweenMax } from 'gsap'
 
 const backgroundIconArr = backgroundIcons

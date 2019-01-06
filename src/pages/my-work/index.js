@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import { Construction} from "../image-constants";
+import { Construction} from "../../image-constants";
 
 const MyWork = props => (
   <Layout>
