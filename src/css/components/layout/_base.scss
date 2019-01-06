@@ -1,0 +1,29 @@
+.layout {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+
+  &__logo {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    &__text {
+      font-size: 1.5em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+  }
+
+  &__area {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    &__menu {
+      flex-basis: 25%;
+    }
+
+    &__children {
+      flex-basis: 75%;
+    }
+  }
+}
