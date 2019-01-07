@@ -1,35 +1,102 @@
 ---
 templateKey: blog-post
-title: Making sense of the SCAA’s new Flavor Wheel
-image: /img/chemex.jpg
+title: 'Javascript Object Creation: This and Bind'
+image: /img/this-and-bind.jpeg
 date: 2016-12-17T15:04:10.000Z
 description: >-
-  The Coffee Taster’s Flavor Wheel, the official resource used by coffee
-  tasters, has been revised for the first time this year.
+  This and bind are crucial fundamentals that should be understood for Object
+  Creation in Javascript.
 tags:
   - flavor
   - tasting
 ---
+I've noticed terms `this` and `bind` in various codes of javascript but never really took to the time to actually understand what it means and how it is used in javascript.
 
-![flavor wheel](/img/flavor_wheel.jpg)
+`this` is all about context. `this` is a javascript keyword that refer to the object that it belongs to.
 
-The SCAA updated the wheel to reflect the finer nuances needed to describe flavors more precisely. The new descriptions are more detailed and hence allow cuppers to distinguish between more flavors.
+Let take a simple example:
+Below, have an object called `dog`
 
-While this is going to be a big change for professional coffee tasters, it means a lot to you as a consumer as well. We’ll explain how the wheel came to be, how pros use it and what the flavors actually mean.
+<strong>Example 1: `this` explanation</strong>
 
-## What the updates mean to you
+```
+let dog = {
+  type: 'Shiba Inu'
+  color: 'blue',
+  description: function() {
+    return 
+      'Dog type:' + this.type + ', Dog color:' + this.color
+  }
+}
+```
 
-The Specialty Coffee Association of America (SCAA), founded in 1982, is a non-profit trade organization for the specialty coffee industry. With members located in more than 40 countries, SCAA represents every segment of the specialty coffee industry, including:
+If I had to run the following code:
 
-* producers
-* roasters
-* importers/exporters
-* retailers
-* manufacturers
-* baristas
+```
+dog.description();
+```
 
-For over 30 years, SCAA has been dedicated to creating a vibrant specialty coffee community by recognizing, developing and promoting specialty coffee. SCAA sets and maintains quality standards for the industry, conducts market research, and provides education, training, resources, and business services for its members.
+the expected output would be `Dog type: Shiba Inu, Dog color: blue`
 
-Coffee cupping, or coffee tasting, is the practice of observing the tastes and aromas of brewed coffee. It is a professional practice but can be done informally by anyone or by professionals known as "Q Graders". A standard coffee cupping procedure involves deeply sniffing the coffee, then loudly slurping the coffee so it spreads to the back of the tongue.
+`this.type` would have the value `Shiba Inu` because it refers to that property of that object it belongs just. The same applies for `this.color`
 
-The coffee taster attempts to measure aspects of the coffee's taste, specifically the body (the texture or mouthfeel, such as oiliness), sweetness, acidity (a sharp and tangy feeling, like when biting into an orange), flavour (the characters in the cup), and aftertaste. Since coffee beans embody telltale flavours from the region where they were grown, cuppers may attempt to identify the coffee's origin.
+if I had to assign `dog.description()` to another variable `describeDog` and run that that method `describeDog()`, the following would happen in this example
+
+<strong>Example 2: Assigning object property with `this` to variable with a bind</strong>
+
+```
+let dog = {
+  type: 'Shiba Inu',
+  color: 'blue',
+  description: function() {
+    return 
+      'Dog type:' + this.type + ', Dog color:' + this.color
+  }
+}
+
+let describeDog =  dog.description;
+console.log(describeDog());
+// The expected result from the console would be
+// Dog type:undefined, Dog color:undefined
+```
+
+the `console.log(describeDog());` was output 
+
+```
+Dog type:undefined, Dog color:undefined
+```
+
+because `describeDog` does not have the context for `this.type` and `this.color`. This is where `bind` comes in.
+
+The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+here is an example of using bind.
+
+<strong>Example 3</strong>
+
+```
+let dog = {
+  type: "Shiba Inu",
+  color: "blue",
+  description: function() {
+    return "Dog type:" + this.type + ", Dog color:" + this.color;
+  }
+};
+let describeDog = dog.description;
+let boundDescribeDog = describeDog.bind(dog);
+
+console.log(boundDescribeDog());
+```
+
+the method `boundDescribeDog()` now has reference object which is `dog` hence `this.type` and `this.color` can be referenced
+which means that the expected output for the `console.log(boundDescribeDog());` will be 
+
+```
+Dog type:Shiba Inu, Dog color:blue
+```
+
+
+
+I hope this demystifies the concepts of `this` and `bind`
+
+Happy coding :)
