@@ -7,8 +7,10 @@ description: >-
   This and bind are crucial fundamentals that should be understood for Object
   Creation in Javascript.
 tags:
-  - flavor
-  - tasting
+  - javascript
+  - bind
+  - this
+  - javascript-object-creation
 ---
 I've noticed terms `this` and `bind` in various codes of javascript but never really took to the time to actually understand what it means and how it is used in javascript.
 
