@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Columns, Column } from "bloomer";
 import Layout from "../../components/Layout";
+import BlogPostPreview from "../../components/BlogPostPreview";
 
 const MyBlog = props => {
   const { data } = props;
@@ -11,20 +12,20 @@ const MyBlog = props => {
       <div className="generic-content">
         <div className="generic-content__title">Latest Blog Posts</div>
         <br/>
-        {/*<Columns isMultiline>*/}
-          {/*{posts.map(({ node: post }, key) => (*/}
-            {/*<Column isSize="1/2">*/}
-              {/*<BlogPostPreview*/}
-                {/*key={key}*/}
-                {/*blogImage={post.frontmatter.image.publicURL}*/}
-                {/*link={post.fields.slug}*/}
-                {/*title={post.frontmatter.title}*/}
-                {/*date={post.frontmatter.date}*/}
-                {/*excerpt={post.excerpt}*/}
-              {/*/>*/}
-            {/*</Column>*/}
-          {/*))}*/}
-        {/*</Columns>*/}
+        <Columns isMultiline>
+          {posts.map(({ node: post }, key) => (
+            <Column isSize="1/2">
+              <BlogPostPreview
+                key={key}
+                blogImage={post.frontmatter.image.publicURL}
+                link={post.fields.slug}
+                title={post.frontmatter.title}
+                date={post.frontmatter.date}
+                excerpt={post.excerpt}
+              />
+            </Column>
+          ))}
+        </Columns>
       </div>
     </Layout>
   );
