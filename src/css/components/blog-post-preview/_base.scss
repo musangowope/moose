@@ -1,0 +1,41 @@
+.blog-post-preview {
+  &__image {
+    @extend .card-image;
+    height: 200px;
+    .image {
+      height: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+  }
+
+  &__link {
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+
+  &__date {
+    @extend small;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__excerpt {
+    font-weight: 200;
+  }
+
+  &__footer {
+    &__button {
+      @extend .button;
+      background-color: #4a4a4a;
+      color: white;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+}
