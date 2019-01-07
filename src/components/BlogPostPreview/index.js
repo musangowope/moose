@@ -30,6 +30,8 @@ const BlogPostPreview = ({ blogImage, link, title, date, excerpt, key }) => (
 
           <div className="blog-post-preview__excerpt">{excerpt}</div>
 
+          <br/>
+
           <div className="blog-post-preview__footer has-text-right">
             <Link className="blog-post-preview__footer__button" to={link}>
               Keep Reading
