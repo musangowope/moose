@@ -4,6 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby";
 import Menu from "../components/Menu";
 import BackgroundIcons from "../components/BackgroundIcons";
 import Landing from "../components/Landing";
+import TopMenuBar from "../components/TopMenuBar";
 import "../css/styles.scss";
 
 const TemplateWrapper = ({ children, pathName = null }) => (
@@ -59,9 +60,7 @@ const TemplateWrapper = ({ children, pathName = null }) => (
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
 
-        <div className="layout__logo">
-          <Link to="/" className="layout__logo__text">Musango Wope</Link>
-        </div>
+        <TopMenuBar />
 
         <div className="layout__area">
           <div className="layout__area__menu">
