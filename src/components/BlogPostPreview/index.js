@@ -15,7 +15,7 @@ const BlogPostPreview = ({ blogImage, link, title, date, excerpt, key }) => (
       <CardImage className="blog-post-preview__image">
         <Image src={blogImage} />
       </CardImage>
-      <CardContent>
+      <CardContent className="blog-post-preview__content">
         <Content>
           <Link className="blog-post-preview__link" to={link}>
             {title}
