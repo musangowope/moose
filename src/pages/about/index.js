@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import { Columns, Column } from "bloomer";
 
 const About = props => (
   <Layout>
@@ -34,24 +33,24 @@ const About = props => (
           and streamline development time
         </p>
         <br />
-        <Columns>
-          <Column>
+        <div className="columns">
+          <div className="column">
             <ul>
               <li>HTML5</li>
               <li>CSS(SCSS)</li>
               <li>Javascript</li>
               <li>Learning Git</li>
             </ul>
-          </Column>
-          <Column>
+          </div>
+          <div className="column">
             <ul>
               <li>VueJS</li>
               <li>Learning React</li>
               <li>Mobile UI Development (Quasar)</li>
               <li>Learning Git</li>
             </ul>
-          </Column>
-        </Columns>
+          </div>
+        </div>
 
         <div className="about__content__title">UI/UX Focused Design:</div>
         <br />
@@ -64,19 +63,19 @@ const About = props => (
 
         <br />
 
-        <Columns>
-          <Column>
+        <div className="columns">
+          <div className="column">
             <ul>
               <li>Wireframing on paper</li>
               <li>Prototyping with Figma</li>
             </ul>
-          </Column>
-          <Column>
+          </div>
+          <div className="column">
             <ul>
               <li>Basic Vector and Pixel Art(GIMP)</li>
             </ul>
-          </Column>
-        </Columns>
+          </div>
+        </div>
       </div>
     </div>
   </Layout>

@@ -1,34 +1,22 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Columns, Column } from "bloomer";
 import Layout from "../../components/Layout";
 import BlogPostPreview from "../../components/BlogPostPreview";
 
 const MyBlog = props => {
   const { data } = props;
   const { edges: posts } = data.allMarkdownRemark;
-  return (
-    <Layout>
+  return <Layout>
       <div className="generic-content">
         <div className="generic-content__title">Latest Blog Posts</div>
-        <br/>
-        <Columns isMultiline>
-          {posts.map(({ node: post }, key) => (
-            <Column isSize={{mobile: '1/1', desktop: '1/2'}}>
-              <BlogPostPreview
-                key={key}
-                blogImage={post.frontmatter.image.publicURL}
-                link={post.fields.slug}
-                title={post.frontmatter.title}
-                date={post.frontmatter.date}
-                excerpt={post.excerpt}
-              />
-            </Column>
-          ))}
-        </Columns>
+        <br />
+        <div className="columns is-multiline">
+          {posts.map(({ node: post }, key) => <div className="column">
+              <BlogPostPreview key={key} blogImage={post.frontmatter.image.publicURL} link={post.fields.slug} title={post.frontmatter.title} date={post.frontmatter.date} excerpt={post.excerpt} />
+            </div>)}
+        </div>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
 
 MyBlog.propTypes = {};
