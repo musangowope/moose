@@ -47,6 +47,7 @@ export default class Landing extends React.Component {
           <img
             src={MooseAtWork}
             className="landing-page__content__working-image"
+            alt="musango wope portfolio"
           />
         </div>
       </div>

@@ -7,6 +7,13 @@
     height: 100%;
     width: 100%;
     display: flex;
+
+    @include respond-below(sm) {
+      & {
+        display: block;
+      }
+    }
+
     &__menu {
       flex-basis: 25%;
     }
@@ -15,6 +22,11 @@
       position: relative;
       flex-basis: 75%;
       padding: 50px;
+      height: 100%;
+
+      @include respond-below(sm) {
+        padding: 0;
+      }
 
       &__content {
         position: relative;

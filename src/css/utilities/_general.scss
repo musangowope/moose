@@ -13,11 +13,20 @@ $kaldi-red-invert: #fff;
 $primary: $kaldi-red;
 $primary-invert: $kaldi-red-invert;
 
+
+a {
+  color: #1D3557;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: #89023e;
+  }
+}
+
 .generic-content {
   padding: 40px;
 
   &__title {
-    font-size: x-large;
+
   }
 }
 

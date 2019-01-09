@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "gatsby";
 
-const Menu = props => {
+const Menu = () => {
   return (
     <ul className="menu-list">
       <li className="menu-list__list-item-link">
@@ -13,10 +13,6 @@ const Menu = props => {
       <li className="menu-list__list-item-link">
         <Link to="/my-blog">Blog</Link>
       </li>
-      <li className="menu-list__list-item-link">
-        <Link to="/about">Connect with me</Link>
-      </li>
-
     </ul>
   );
 };

@@ -1,3 +1,3 @@
-import MooseAtWorkImg from '../../images/header-images/moose-working.svg'
+import MooseAtWorkImg from '../../img/moose-working.svg'
 
 export const MooseAtWork  = MooseAtWorkImg;

@@ -8,8 +8,13 @@
   padding: 10px;
   z-index: 9;
 
+  @include respond-below(sm) {
+    background-color: white;
+  }
+
   &__logo {
-    font-size: 1.5em;
+    @extend .is-size-3-desktop;
+    @extend .is-size-4-tablet;
     text-transform: uppercase;
     font-weight: 900;
   }
@@ -18,11 +23,36 @@
     margin-right: 20px;
     display: flex;
     justify-content: flex-end;
+
+    @include respond-below(sm) {
+      display: none;
+      margin-right: 0;
+    }
     &__icon {
       margin-right: 5px;
       margin-left: 5px;
     }
   }
 
+  .hamburger-menu {
+    @extend .icon-group;
+    color: #1d3557;
+    margin-top: 5px;
+    background: none;
+    border: none;
+    display: flex;
+    transition: 0.2s ease-in-out;
 
+    &:hover {
+      border: none;
+    }
+
+    &:hover, &:focus {
+      color: #89023e;
+    }
+
+    @include respond-above(sm) {
+      display: none;
+    }
+  }
 }
