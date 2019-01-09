@@ -14,7 +14,7 @@ const MyBlog = props => {
         <br/>
         <Columns isMultiline>
           {posts.map(({ node: post }, key) => (
-            <Column isSize="1/2">
+            <Column isSize={{mobile: '1/1', desktop: '1/2'}}>
               <BlogPostPreview
                 key={key}
                 blogImage={post.frontmatter.image.publicURL}
