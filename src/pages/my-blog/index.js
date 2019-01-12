@@ -6,17 +6,28 @@ import BlogPostPreview from "../../components/BlogPostPreview";
 const MyBlog = props => {
   const { data } = props;
   const { edges: posts } = data.allMarkdownRemark;
-  return <Layout>
+  return (
+    <Layout>
       <div className="generic-content">
         <div className="generic-content__title">Latest Blog Posts</div>
         <br />
         <div className="columns is-multiline">
-          {posts.map(({ node: post }, key) => <div className="column">
-              <BlogPostPreview key={key} blogImage={post.frontmatter.image.publicURL} link={post.fields.slug} title={post.frontmatter.title} date={post.frontmatter.date} excerpt={post.excerpt} />
-            </div>)}
+          {posts.map(({ node: post }, key) => (
+            <div className="column">
+              <BlogPostPreview
+                key={key}
+                blogImage={post.frontmatter.image.publicURL}
+                link={post.fields.slug}
+                title={post.frontmatter.title}
+                date={post.frontmatter.date}
+                excerpt={post.excerpt}
+              />
+            </div>
+          ))}
         </div>
       </div>
-    </Layout>;
+    </Layout>
+  );
 };
 
 MyBlog.propTypes = {};

@@ -1,9 +1,11 @@
 import React from "react";
 import Layout from "../../components/Layout";
+import AboutMeImg from "../../img/about-me.jpg";
 
-const About = props => (
+const About = () => (
   <Layout>
     <div className="about">
+      <div className="about__header-img" style={{backgroundImage: `url(${AboutMeImg})`}}/>
       <div className="about__content">
         <div className="about__content__title">A Brief Intro</div>
         <br />
