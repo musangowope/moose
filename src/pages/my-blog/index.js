@@ -13,7 +13,7 @@ const MyBlog = props => {
         <br />
         <div className="columns is-multiline">
           {posts.map(({ node: post }, key) => (
-            <div className="column">
+            <div className="column is-half-desktop is-full-mobile">
               <BlogPostPreview
                 key={key}
                 blogImage={post.frontmatter.image.publicURL}
