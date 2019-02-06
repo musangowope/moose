@@ -22,9 +22,12 @@ a {
 }
 
 .generic-content {
+  margin-top: 60px;
   padding: 40px;
 
   &__title {
+    font-weight: bold;
+    font-size: x-large;
   }
 }
 

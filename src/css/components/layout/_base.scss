@@ -21,7 +21,7 @@
     &__children {
       position: relative;
       flex-basis: 75%;
-      padding: 50px;
+      //padding: 50px;
       height: 100%;
 
       @include respond-below(sm) {
