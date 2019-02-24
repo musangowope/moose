@@ -88,7 +88,6 @@ class BackgroundIcons extends Component {
         alt="background icon"
         key={key}
         src={backgroundItem}
-        className="animated fadeIn"
         id={`backgroundIcon` + key}
         style={{
           width: "100px",
@@ -98,7 +97,6 @@ class BackgroundIcons extends Component {
           bottom: this.generateRandomPosition().bottom,
           left: this.generateRandomPosition().left,
           right: this.generateRandomPosition().right,
-          animationDelay: '0.5s'
         }}
       />
     ));
