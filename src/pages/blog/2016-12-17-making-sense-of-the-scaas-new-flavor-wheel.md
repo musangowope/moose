@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: 'Javascript Object Creation: This and Bind'
 image: /img/this-and-bind.jpeg
-date: 2016-12-17T15:04:10.000Z
+date: 2018-12-31T15:04:10.000Z
 description: >-
   This and bind are crucial fundamentals that should be understood for Object
   Creation in Javascript.
