@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import { backgroundIcons } from '../../image-constants'
-import { TweenMax } from 'gsap'
+import React, { Component } from "react";
+import { backgroundIcons } from "../../image-constants";
+import { TweenMax } from "gsap";
 
-const backgroundIconArr = backgroundIcons
+const backgroundIconArr = backgroundIcons;
 
 class BackgroundIcons extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       screenDimensions: {
-        vw: typeof window !== 'undefined' ? window.innerWidth - 200 : null,
-        vh: typeof window !== 'undefined' ? window.innerHeight - 200 : null,
-      },
-    }
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
+        vw: typeof window !== "undefined" ? window.innerWidth - 200 : null,
+        vh: typeof window !== "undefined" ? window.innerHeight - 200 : null
+      }
+    };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   generateRandomPosition = () => {
@@ -28,55 +28,59 @@ class BackgroundIcons extends Component {
         Math.floor(Math.random() * (this.state.screenDimensions.vh - 1 + 1)) +
         1,
       bottom:
-        Math.floor(Math.random() * (this.state.screenDimensions.vh - 1 + 1)) +
-        1,
-    }
-  }
+        Math.floor(Math.random() * (this.state.screenDimensions.vh - 1 + 1)) + 1
+    };
+  };
 
   animateBackgroundIcon = index => {
-    TweenMax.to('#backgroundIcon' + index, 20, {
+    const animateBackgroundObj = {
       top: this.generateRandomPosition().top,
       bottom: this.generateRandomPosition().bottom,
       left: this.generateRandomPosition().left,
-      right: this.generateRandomPosition().right,
-    })
-  }
+      right: this.generateRandomPosition().right
+    };
+
+
+    TweenMax.to("#backgroundIcon" + index, 20, {
+      ...animateBackgroundObj
+    });
+  };
 
   componentDidMount() {
-    this.initAnimateBackgroundIcon()
-    typeof window !== 'undefined' &&
-      window.addEventListener('resize', this.updateWindowDimensions)
+    this.initAnimateBackgroundIcon();
+    typeof window !== "undefined" &&
+      window.addEventListener("resize", this.updateWindowDimensions);
   }
 
   componentWillUnmount() {
-    clearInterval(this.changeAnimateBackgroundIcon)
-    window.removeEventListener('resize', this.updateWindowDimensions)
+    clearInterval(this.changeAnimateBackgroundIcon);
+    window.removeEventListener("resize", this.updateWindowDimensions);
   }
 
   initAnimateBackgroundIcon = () => {
     backgroundIconArr.forEach((backgroundIconItem, index) => {
-      this.animateBackgroundIcon(index)
-    })
-    this.intervalAnimateBackgroundIcon()
-  }
+      this.animateBackgroundIcon(index);
+    });
+    this.intervalAnimateBackgroundIcon();
+  };
 
   intervalAnimateBackgroundIcon = () => {
     backgroundIconArr.forEach((backgroundIconItem, index) => {
       this.changeAnimateBackgroundIcon = setInterval(
         () => this.animateBackgroundIcon(index),
         20000
-      )
-    })
-  }
+      );
+    });
+  };
 
   updateWindowDimensions = () => {
     this.setState({
       screenDimensions: {
-        vw: typeof window !== 'undefined' ? window.innerWidth - 100 : 0,
-        vh: typeof window !== 'undefined' ? window.innerHeight - 100 : 0,
-      },
-    })
-  }
+        vw: typeof window !== "undefined" ? window.innerWidth - 100 : 0,
+        vh: typeof window !== "undefined" ? window.innerHeight - 100 : 0
+      }
+    });
+  };
 
   render() {
     return backgroundIconArr.map((backgroundItem, key) => (
@@ -84,19 +88,21 @@ class BackgroundIcons extends Component {
         alt="background icon"
         key={key}
         src={backgroundItem}
+        className="animated fadeIn"
         id={`backgroundIcon` + key}
         style={{
-          width: '100px',
-          height: '100px',
-          position: 'absolute',
+          width: "100px",
+          height: "100px",
+          position: "absolute",
           top: this.generateRandomPosition().top,
           bottom: this.generateRandomPosition().bottom,
           left: this.generateRandomPosition().left,
           right: this.generateRandomPosition().right,
+          animationDelay: '0.5s'
         }}
       />
-    ))
+    ));
   }
 }
 
-export default BackgroundIcons
+export default BackgroundIcons;

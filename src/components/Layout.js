@@ -60,9 +60,7 @@ const TemplateWrapper = ({ children, pathName = null }) => {
               <Menu />
             </div>
             <div className="layout__area__children">
-              <div className="animated fadeIn">
-                <BackgroundIcons />
-              </div>
+              <BackgroundIcons />
               {pathName === "/" ? (
                 <Landing />
               ) : (
