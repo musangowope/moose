@@ -10,14 +10,8 @@
   &__image {
     @extend .card-image;
     height: 200px;
-    .gatsby-image-wrapper {
-      height: 100%;
-      margin: 0;
-      position: initial;
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
+    img {
+      height: 200px !important;
     }
   }
 

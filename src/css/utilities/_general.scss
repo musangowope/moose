@@ -26,17 +26,8 @@ a {
   padding: 40px;
 
   &__feature-image {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-
-    .gatsby-image-wrapper {
-      height: 100%;
-      position: initial;
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
+    img {
+      height: 200px !important;
     }
   }
 
@@ -117,13 +108,8 @@ a {
     width: 100%;
     object-fit: cover;
 
-    .gatsby-image-wrapper {
-      height: 100%;
-      position: initial;
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
+    img {
+      height: 200px;
     }
   }
 
@@ -204,13 +190,8 @@ a {
     width: 100%;
     object-fit: cover;
 
-    .gatsby-image-wrapper {
-      height: 100%;
-      position: initial;
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
+    img {
+      height: 200px;
     }
   }
 
