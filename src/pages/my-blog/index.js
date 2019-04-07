@@ -6,6 +6,7 @@ import BlogPostPreview from "../../components/BlogPostPreview";
 const MyBlog = props => {
   const { data } = props;
   const { edges: posts } = data.allMarkdownRemark;
+
   return (
     <Layout>
       <div className="generic-content">
@@ -16,7 +17,7 @@ const MyBlog = props => {
             <div className="column is-half-desktop is-full-mobile">
               <BlogPostPreview
                 key={key}
-                blogImage={post.frontmatter.image.publicURL}
+                blogImage={post.frontmatter.image.childImageSharp.fluid}
                 link={post.fields.slug}
                 title={post.frontmatter.title}
                 date={post.frontmatter.date}
@@ -53,8 +54,15 @@ export const pageQuery = graphql`
             templateKey
             date(formatString: "MMMM DD, YYYY")
             image {
-              id
-              publicURL
+              childImageSharp {
+                fluid {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
             }
           }
         }

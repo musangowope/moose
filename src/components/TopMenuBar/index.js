@@ -1,17 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
 import {
-  FaInstagram,
-  FaTwitter,
-  FaLinkedin,
+  FaBars,
   FaEnvelope,
-  FaBars
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter
 } from "react-icons/fa";
 
 const TopBarMenu = ({ toggleMenu }) => {
   const setBarButtonState = buttonState => {
-    const newBarButtonState = buttonState;
-    toggleMenu(newBarButtonState);
+    toggleMenu(buttonState);
   };
 
   return (
@@ -23,13 +22,18 @@ const TopBarMenu = ({ toggleMenu }) => {
         <div className="icon-group__icon">
           <a
             href="https://www.instagram.com/moosedoesdesign/?hl=en"
-            rel="noopener"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <FaInstagram size="1.5em" />
           </a>
         </div>
         <div className="icon-group__icon">
-          <a href="https://twitter.com/CodeUiux" rel="noopener">
+          <a
+            href="https://twitter.com/CodeUiux"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <FaTwitter size="1.5em" />
           </a>
         </div>
@@ -37,7 +41,8 @@ const TopBarMenu = ({ toggleMenu }) => {
         <div className="icon-group__icon">
           <a
             href="https://www.linkedin.com/in/musango-wope-414656120/"
-            rel="noopener"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <FaLinkedin size="1.5em" />
           </a>

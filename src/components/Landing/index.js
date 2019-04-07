@@ -1,57 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { MooseAtWork } from "./image-constants";
+import { useInterval } from "../../functions/useInterval.func";
 
-export default class Landing extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      webDisplayIndex: 0
-    };
-  }
+const Landing = () => {
+  const [landingState, setLandingState] = useState({
+    webDisplayIndex: 0
+  });
 
-  componentDidMount() {
-    this.interval = setInterval(() => this.setWebIndex(), 3000);
-  }
+  const { webDisplayIndex } = landingState;
 
-  componentWillMount() {
-    clearInterval(this.interval);
-  }
+  useInterval(() => {
+    setWebIndex();
+  }, 3000);
 
-  setWebIndex = () => {
-    if (this.state.webDisplayIndex >= 2) {
-      this.setState({ webDisplayIndex: 0 });
+  const setWebIndex = () => {
+    const { webDisplayIndex: newWebIndex } = landingState;
+    if (newWebIndex >= 2) {
+      setLandingState({
+        ...landingState,
+        webDisplayIndex: 0
+      });
     } else {
-      this.setState(prevState => ({
-        webDisplayIndex: prevState.webDisplayIndex + 1
-      }));
+      setLandingState({
+        ...landingState,
+        webDisplayIndex: newWebIndex + 1
+      });
     }
   };
 
-  render() {
-    return (
-      <div className="landing-page">
-        <div className="landing-page__content">
-          <div className="landing-page__content__thinking-bubble">
-            <div className="landing-page__content__thinking-bubble__text">
-              {this.state.webDisplayIndex === 0 && (
-                <div className="animated fadeIn">HTML</div>
-              )}
-              {this.state.webDisplayIndex === 1 && (
-                <div className="animated fadeIn">CSS</div>
-              )}
-              {this.state.webDisplayIndex === 2 && (
-                <div className="animated fadeIn">Javascript</div>
-              )}
-            </div>
+  return (
+    <div className="landing-page">
+      <div className="landing-page__content">
+        <div className="landing-page__content__thinking-bubble">
+          <div className="landing-page__content__thinking-bubble__text">
+            {webDisplayIndex === 0 && (
+              <div className="animated fadeIn">HTML</div>
+            )}
+            {webDisplayIndex === 1 && (
+              <div className="animated fadeIn">CSS</div>
+            )}
+            {webDisplayIndex === 2 && (
+              <div className="animated fadeIn">Javascript</div>
+            )}
           </div>
-          <img
-            src={MooseAtWork}
-            className="landing-page__content__working-image"
-            alt="musango wope portfolio"
-          />
         </div>
+        <img
+          src={MooseAtWork}
+          className="landing-page__content__working-image"
+          alt="musango wope portfolio"
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
+export default Landing;

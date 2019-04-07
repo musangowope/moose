@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Img from 'gatsby-image';
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
@@ -24,7 +25,9 @@ export const BlogPostTemplate = ({
         {title}
       </h1>
 
-      <img src={postImage} alt={`${title} image`} className="full-width" />
+      <div className="generic-content__feature-image">
+        <Img fluid={postImage}/>
+      </div>
 
       <br />
       <br/>
@@ -66,7 +69,7 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        postImage={post.frontmatter.image.publicURL}
+        postImage={post.frontmatter.image.childImageSharp.fluid}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -102,8 +105,15 @@ export const pageQuery = graphql`
         description
         tags
         image {
-          id
-          publicURL
+          childImageSharp {
+            fluid {
+              base64
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
         }
       }
     }

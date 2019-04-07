@@ -35,14 +35,19 @@ const MobileSideMenu = ({ toggleMenu }) => {
           <li className="mobile-side-menu__list__item">
             <a
               href="https://www.instagram.com/moosedoesdesign/?hl=en"
-              rel="noopener"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Instagram
             </a>
           </li>
 
           <li className="mobile-side-menu__list__item">
-            <a href="https://twitter.com/CodeUiux" rel="noopener">
+            <a
+              href="https://twitter.com/CodeUiux"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               Twitter
             </a>
           </li>
@@ -50,12 +55,12 @@ const MobileSideMenu = ({ toggleMenu }) => {
           <li className="mobile-side-menu__list__item">
             <a
               href="https://www.linkedin.com/in/musango-wope-414656120/"
-              rel="noopener"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               LinkedIn
             </a>
           </li>
-
         </ul>
       </div>
     </Fragment>
