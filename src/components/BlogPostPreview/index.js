@@ -35,7 +35,7 @@ const BlogPostPreview = ({ blogImage, link, title, date, excerpt, key }) => (
 );
 
 BlogPostPreview.propTypes = {
-  blogImage: PropTypes.string,
+  blogImage: PropTypes.object,
   title: PropTypes.string,
   date: PropTypes.string,
   link: PropTypes.string,
