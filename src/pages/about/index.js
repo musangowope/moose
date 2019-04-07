@@ -12,6 +12,7 @@ const About = ({ data }) => {
   return (
     <Layout>
       <div className="about">
+
         <div className="about__header-img">
           <Img fluid={AboutMeImg} />
         </div>
