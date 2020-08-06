@@ -1,7 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:400,700&display=swap");
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap");
 
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 16px;
   height: 100%;
@@ -12,6 +20,7 @@ html {
 }
 
 *, *:before, *:after {
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 

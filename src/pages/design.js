@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Seo from "../components/Seo"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/Layout"
 import themed from "../functions/themed"
 import Title from "../elements/Title"
@@ -15,38 +15,38 @@ const InstaGridLayout = styled.div`
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
   @media screen and (max-width: ${props => props.theme.breakpoints.md}) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    @media screen and (max-width: ${props => props.theme.breakpoints.sm}) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-`
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-const AllInstagramQuery = graphql`
-  query MyQuery {
-    allInstaNode {
-      edges {
-        node {
-          id
-          comments
-          likes
-          mediaType
-          preview
-          # localFile {
-          #   childImageSharp {
-          #     fixed(width: 150, height: 150) {
-          #       ...GatsbyImageSharpFixed
-          #     }
-          #   }
-          # }
-        }
-      }
-    }
+  @media screen and (max-width: ${props => props.theme.breakpoints.sm}) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 
 const DesignPage = ({ path }) => {
+  const instagramData = useStaticQuery(graphql`
+    query MyQuery {
+      allInstaNode {
+        edges {
+          node {
+            id
+            comments
+            likes
+            mediaType
+            preview
+            # localFile {
+            #   childImageSharp {
+            #     fixed(width: 150, height: 150) {
+            #       ...GatsbyImageSharpFixed
+            #     }
+            #   }
+            # }
+          }
+        }
+      }
+    }
+  `)
+  console.log(instagramData)
   return (
     <Layout path={path}>
       <Seo title="Design" />
@@ -58,22 +58,35 @@ const DesignPage = ({ path }) => {
           Daily UI is a series of daily design challenges design inspiration.
           Here are some designs I produced
         </Paragraph>
-        <StaticQuery
-          query={AllInstagramQuery}
-          render={({ allInstaNode: { edges = [] } }) => (
-            <InstaGridLayout>
-              {edges.map(({ node: { id, preview, comments, likes } }) => (
-                <InstaThumbnail
-                  key={id}
-                  id={id}
-                  preview={preview}
-                  comments={comments}
-                  likes={likes}
-                />
-              ))}
-            </InstaGridLayout>
+        <InstaGridLayout>
+          {instagramData.allInstaNode.edges.map(
+            ({ node: { id, preview, comments, likes } }) => (
+              <InstaThumbnail
+                key={id}
+                id={id}
+                preview={preview}
+                comments={comments}
+                likes={likes}
+              />
+            )
           )}
-        />
+        </InstaGridLayout>
+        {/*<StaticQuery*/}
+        {/*  query={AllInstagramQuery}*/}
+        {/*  render={({ allInstaNode: { edges = [] } }) => (*/}
+        {/*    <InstaGridLayout>*/}
+        {/*      {edges.map(({ node: { id, preview, comments, likes } }) => (*/}
+        {/*        <InstaThumbnail*/}
+        {/*          key={id}*/}
+        {/*          id={id}*/}
+        {/*          preview={preview}*/}
+        {/*          comments={comments}*/}
+        {/*          likes={likes}*/}
+        {/*        />*/}
+        {/*      ))}*/}
+        {/*    </InstaGridLayout>*/}
+        {/*  )}*/}
+        {/*/>*/}
       </Container>
     </Layout>
   )
