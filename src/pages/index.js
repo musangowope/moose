@@ -1,6 +1,5 @@
 import React, { Fragment } from "react"
 import { Router } from "@reach/router"
-import "../styles/global.css"
 import BlogPage from "./blog"
 import HomePage from "./home"
 import DesignPage from "./design"

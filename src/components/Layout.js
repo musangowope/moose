@@ -6,6 +6,7 @@ import themed from "../functions/themed"
 import PrimaryButtonLink from "../elements/PrimaryButtonLink"
 import ChevronRightIcon from "../svgs/chevron-right.inline.svg"
 import ChevronLeftIcon from "../svgs/chevron-left.inline.svg"
+import "../styles/global.css"
 
 const IconWrapper = styled.div`
   margin-left: 10px;
