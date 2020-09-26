@@ -11,7 +11,10 @@ const StyledLink = styled(Link)`
 `
 
 const StyledReactMarkdown = styled.div`
-  font-size: ${props => props.theme.fontSizes[4]};
+  font-size: ${props => props.theme.fontSizes[4]} !important;
+  * {
+    font-size: ${props => props.theme.fontSizes[4]} !important;
+  }
 
   a {
     margin-right: 0 !important;
