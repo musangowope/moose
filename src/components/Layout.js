@@ -86,20 +86,20 @@ const Navigator = ({ path }) => {
           path: "",
           linkText: "",
         }
-      case "/design/":
+      case "/web-development/":
         return {
           path: "/about",
           linkText: "About",
+        }
+      case "/design/":
+        return {
+          path: "/web-development",
+          linkText: "Web Dev",
         }
       case "/blog/":
         return {
           path: "/design",
           linkText: "Design",
-        }
-      case "web-development":
-        return {
-          path: "/blog",
-          linkText: "Blog",
         }
       default:
         return {}
@@ -110,6 +110,11 @@ const Navigator = ({ path }) => {
     switch (path) {
       case "/about/":
         return {
+          path: "/web-development",
+          linkText: "Web Dev",
+        }
+      case "/web-development/":
+        return {
           path: "/design",
           linkText: "Design",
         }
@@ -120,15 +125,9 @@ const Navigator = ({ path }) => {
         }
       case "/blog/":
         return {
-          path: "/web-development",
-          linkText: "Web Dev",
-        }
-      case "web-development":
-        return {
           path: "",
           linkText: "",
         }
-
       default:
         return {}
     }

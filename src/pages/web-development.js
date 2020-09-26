@@ -49,13 +49,13 @@ const CityVibeContent = () => (
       in that specific hour coupled with realtime chat and rating.
     </Paragraph>
 
-    <ViewCaseStudyBtn to="/city-vibe" >View Case Study</ViewCaseStudyBtn>
+    <ViewCaseStudyBtn to="/city-vibe">View Case Study</ViewCaseStudyBtn>
   </React.Fragment>
 )
 
-const WebDevPage = () => {
+const WebDevPage = ({ path }) => {
   return (
-    <Layout path="web-development">
+    <Layout path={path}>
       <Seo title="Web Development" />
       <Container>
         <Project

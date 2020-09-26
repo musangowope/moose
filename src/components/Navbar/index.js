@@ -152,16 +152,16 @@ const Navbar = () => {
       linkText: "About",
     },
     {
+      link: "/web-development",
+      linkText: "Web Dev",
+    },
+    {
       link: "/design",
       linkText: "Design",
     },
     {
       link: "/blog",
       linkText: "Blog",
-    },
-    {
-      link: "/web-development",
-      linkText: "Web Dev",
     },
   ]
   return (
