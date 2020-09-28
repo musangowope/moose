@@ -3,7 +3,7 @@ import styled from "styled-components"
 import themed from "../functions/themed"
 import HeartIcon from "../svgs/heart.inline.svg"
 import CommentIcon from "../svgs/comment.inline.svg"
-import { hasValue } from "../functions/hasValue.func"
+import Image from "./Image"
 
 const ImageLinkOverlay = styled.div`
   position: absolute;
@@ -75,7 +75,7 @@ const InstaInfo = styled.div`
 const InstaThumbnail = ({ id, preview, comments, likes }) => {
   return (
     <ImageLink href={`https://www.instagram.com/p/${id}/`} target="_blank">
-      {hasValue(preview) && <img key={id} src={preview} alt="design-img" />}
+      <Image src={preview} alt="design-img" />
       <ImageLinkOverlay>
         <OverlayContent>
           <InstaInfo>
