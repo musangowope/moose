@@ -115,7 +115,7 @@ const MobileMenuIconButton = styled(TransparentButton)`
 
 const MobileMenuWrapper = styled.div`
   display: none;
-  @media screen and (max-width: ${props => props.theme.breakpoints.md}) {
+  @media screen and (max-width: ${props => props.theme.breakpoints.lg}) {
     display: block;
     position: fixed;
     width: 100%;
