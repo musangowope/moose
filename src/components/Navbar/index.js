@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 import AvatarIcon from "../../svgs/avatar.inline.svg"
 import { Link } from "gatsby"
 import PrimaryButtonLink from "../../elements/PrimaryButtonLink"
@@ -8,6 +8,7 @@ import MenuIcon from "../../svgs/menu.inline.svg"
 import TransparentButton from "../../elements/TransparentButton"
 import MobileMenu from "./MobileMenu"
 import { handleOutsideElementClick } from "../../functions/handleOutsideElementClick.func"
+import PrimaryButtonAnchor from "../../elements/PrimaryButtonAnchor";
 
 export const NavHeight = "95px"
 
@@ -55,7 +56,7 @@ const Navbar = () => {
           </AvatarSvgWrapper>
           <AvatarTextContainer>
             <AvatarText>Musango Wope</AvatarText>
-            <SubText>(Front End Engineer and Designer)</SubText>
+            <SubText>(Front End Engineer and UX/UI Enthusiast)</SubText>
           </AvatarTextContainer>
         </AvatarLink>
 
@@ -65,6 +66,16 @@ const Navbar = () => {
               <NavItemLink to={linkItem.path}>{linkItem.linkText}</NavItemLink>
             </NavItem>
           ))}
+          <NavItem>
+            <NavItemAnchor target="_blank" href="https://www.linkedin.com/in/musango-wope-414656120/">
+              LinkedIn
+            </NavItemAnchor>
+          </NavItem>
+          <NavItem>
+            <NavItemAnchor target="_blank" href="https://github.com/musangowope">
+              Github
+            </NavItemAnchor>
+          </NavItem>
         </NavItemsContainer>
 
         <MobileMenuIconButton
@@ -107,12 +118,21 @@ const NavItem = styled.div`
   margin-bottom: auto;
 `
 
-const NavItemLink = styled(PrimaryButtonLink)`
+const navItemLinkStyles = css`
+  padding-right: ${props => props.theme.marginPaddings[1]};
+  padding-left: ${props => props.theme.marginPaddings[1]};
   font-size: ${props => props.theme.fontSizes[4]};
   display: block;
-  width: 195px;
+  width: 100%;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;`
+
+const NavItemLink = styled(PrimaryButtonLink)`
+  ${() => navItemLinkStyles}
+`
+
+const NavItemAnchor = styled(PrimaryButtonAnchor)`
+  ${() => navItemLinkStyles}
 `
 
 const AvatarTextContainer = styled.span`
@@ -162,7 +182,7 @@ const AvatarSvgWrapper = styled.div`
 const NavItemsContainer = styled.div`
   display: grid;
   grid-auto-rows: minmax(${NavHeight}, auto);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   column-gap: 10px;
   @media screen and (max-width: ${props => props.theme.breakpoints.lg}) {
     display: none;
