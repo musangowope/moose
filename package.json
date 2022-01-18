@@ -16,7 +16,6 @@
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-remark-images": "^3.3.24",
     "gatsby-source-filesystem": "^2.3.23",
-    "gatsby-source-instagram": "^0.8.0",
     "gatsby-transformer-remark": "^2.8.27",
     "gatsby-transformer-sharp": "^2.5.12",
     "prop-types": "^15.7.2",

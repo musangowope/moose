@@ -4,10 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Musango Wope Web Developer`,
-    description: `Web developer and UI/UX Designer`,
+    title: `Musango Wope Front Engineer`,
+    description: `Front End Engineer and UI/UX Enthusiast`,
     author: `@Musango Wope`,
-    keywords: "Front End Developer, Javascript, HTML, SCSS/CSS, Design",
+    keywords: "Front End Engineer, Javascript, HTML, SCSS/CSS, Design",
   },
   plugins: [
     {
@@ -15,12 +15,6 @@ module.exports = {
       options: {
         blogger_api_key: process.env.GATSBY_BLOGGER_API_KEY,
         blogger_id: process.env.GATSBY_BLOGGER_BLOG_ID,
-      },
-    },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `8082825063`,
       },
     },
     `gatsby-transformer-remark`,
