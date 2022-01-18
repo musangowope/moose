@@ -75,9 +75,8 @@ const SameStartPage = () => {
             <TertiaryTitle>Front End</TertiaryTitle>
             <Paragraph>
               <ul>
-                <li>Gatsby JS</li>
-                <li>React</li>
-                <li>SCSS: (Moving to Styled Components)</li>
+                <li>React JS</li>
+                <li>Styled components</li>
               </ul>
             </Paragraph>
           </div>
@@ -85,18 +84,17 @@ const SameStartPage = () => {
             <TertiaryTitle>Back End</TertiaryTitle>
             <Paragraph>
               <ul>
-                <li>Node</li>
-                <li>Express</li>
-                <li>Mongodb</li>
+                <li>Wordpress API</li>
               </ul>
             </Paragraph>
           </div>
         </TechStackParagraphWrapper>
 
-        <SecondaryTitle>Preview</SecondaryTitle>
+
+        <SecondaryTitle>Conclusion:</SecondaryTitle>
         <Paragraph>
-          We have currently built an MVP. A lot is in the works for this
-          project. Here is a demo what we have built so far
+          After a challenging journey, my founder and I decided to end this project. Below is a video
+          demoing an early version of site. and a demo of the site can be seen <a href="https://confident-lalande-0cdcf7.netlify.app/" target="_blank" rel="noreferrer">here</a>
         </Paragraph>
         <SameStartVideo src={Preview} controls />
       </Container>

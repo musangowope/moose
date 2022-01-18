@@ -23,16 +23,17 @@ const SameStartContent = () => (
   <React.Fragment>
     <ProjectSubtitle>About Project</ProjectSubtitle>
     <Paragraph>
-      Same Start is an edtech project that I co-founded and developed with my
-      business partner. We have currently been working on this project in our
-      spare time outside our regular do jobs Same Start aims to bridge the
+      Same Start was an edtech project that I co-founded and developed with my
+      business partner. We worked on this project in our
+      spare time outside our regular do jobs. Same Start aimsd to bridge the
       education language gap and give every learner the same start by providing
       interactive and gamified translated education content with corresponding
       quizzes.
     </Paragraph>
     <ProjectSubtitle>My role in project</ProjectSubtitle>
     <Paragraph>
-      I designed all the UI and coded all the front end processes for Same Start
+      I designed all the UI and coded all the front end processes for Same Start as well as the
+      Wordpress backend api endpoints
     </Paragraph>
 
     <ViewCaseStudyBtn to="/same-start">View Case Study</ViewCaseStudyBtn>
@@ -60,7 +61,7 @@ const WebDevPage = ({ path }) => {
       <Container>
         <Project
           projectTitle="Same Start"
-          status="In-development"
+          status="Discontinued"
           projectBodyContent={SameStartContent}
         />
 

@@ -32,7 +32,7 @@ const AboutPage = ({ path }) => {
         <Title>About Me</Title>
         <AboutMeImage src={AboutMe} />
         <Paragraph>
-          I am front end developer and aspiring UX/UI Designer that is currently
+          I am front end developer and UX/UI enthusiast that is currently
           looking for opportunities to collaborate with other partners and
           businesses to create cool innovative  web solutions.
         </Paragraph>
@@ -53,6 +53,7 @@ const AboutPage = ({ path }) => {
               <li>Javascript</li>
               <li>Git</li>
               <li>Wordpress Development</li>
+              <li>Shopify Theme Development</li>
             </ul>
             <ul>
               <li>React</li>
