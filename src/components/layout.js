@@ -80,16 +80,17 @@ const StyledLayout = styled.div`
 
 const Navigator = ({ path }) => {
   const index = menuItems.findIndex(item => item.path === path);
+  console.log({index});
 
   const prevNavBtnData = (() => {
-    if(index === 0) {
+    if(index === 0 || index === -1) {
       return {};
     }
     return menuItems[index -1];
   })();
 
   const nexNavBtnData = (() => {
-    if(index === menuItems.length -1) {
+    if(index === menuItems.length -1 || index === -1) {
      return {};
     }
     return menuItems[index + 1];
@@ -134,7 +135,6 @@ Navigator.defaultProps = {
 }
 
 const Layout = ({ children, path }) => {
-  console.log(path);
   return (
     <StyledLayout>
       <Navbar />
