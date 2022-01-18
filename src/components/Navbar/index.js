@@ -11,6 +11,75 @@ import { handleOutsideElementClick } from "../../functions/handleOutsideElementC
 
 export const NavHeight = "95px"
 
+export const menuItems = [
+  {
+    path: "/about/",
+    linkText: "About",
+  },
+  {
+    path: "/web-development/",
+    linkText: "Web Dev",
+  },
+  {
+    path: "/blog/",
+    linkText: "Blog",
+  },
+];
+
+const Navbar = () => {
+  const [isMobileMenuActive, setMobileMenuActive] = React.useState(false)
+  const modalRef = React.useRef()
+  React.useEffect(() => {
+    const handleOutsideClick = e =>
+      handleOutsideElementClick(modalRef, e, () => setMobileMenuActive(false))
+    window.addEventListener("mousedown", handleOutsideClick)
+    return () => {
+      window.removeEventListener("mousedown", handleOutsideClick)
+    }
+  }, [])
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
+
+  const handleResize = () => setMobileMenuActive(false)
+  return (
+    <NavbarWrapper ref={modalRef}>
+      <NavBodyContent>
+        <AvatarLink to="/">
+          <AvatarSvgWrapper>
+            <AvatarIcon />
+          </AvatarSvgWrapper>
+          <AvatarTextContainer>
+            <AvatarText>Musango Wope</AvatarText>
+            <SubText>(Front End Engineer and Designer)</SubText>
+          </AvatarTextContainer>
+        </AvatarLink>
+
+        <NavItemsContainer>
+          {menuItems.map((linkItem, key) => (
+            <NavItem key={key}>
+              <NavItemLink to={linkItem.path}>{linkItem.linkText}</NavItemLink>
+            </NavItem>
+          ))}
+        </NavItemsContainer>
+
+        <MobileMenuIconButton
+          onClick={() => setMobileMenuActive(prev => !prev)}
+        >
+          <MenuIcon />
+        </MobileMenuIconButton>
+      </NavBodyContent>
+      <MobileMenuWrapper isActive={isMobileMenuActive}>
+        <MobileMenu menuItems={menuItems} />
+      </MobileMenuWrapper>
+    </NavbarWrapper>
+  )
+}
+
 const NavbarWrapper = styled.div`
   position: sticky;
   top: 0;
@@ -124,81 +193,5 @@ const MobileMenuWrapper = styled.div`
   }
 }
 `
-
-const Navbar = () => {
-  const [isMobileMenuActive, setMobileMenuActive] = React.useState(false)
-  const modalRef = React.useRef()
-  React.useEffect(() => {
-    const handleOutsideClick = e =>
-      handleOutsideElementClick(modalRef, e, () => setMobileMenuActive(false))
-    window.addEventListener("mousedown", handleOutsideClick)
-    return () => {
-      window.removeEventListener("mousedown", handleOutsideClick)
-    }
-  }, [])
-
-  React.useEffect(() => {
-    window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
-
-  const handleResize = () => setMobileMenuActive(false)
-
-  const linksArray = [
-    {
-      link: "/about",
-      linkText: "About",
-    },
-    {
-      link: "/web-development",
-      linkText: "Web Dev",
-    },
-    {
-      link: "/design",
-      linkText: "Design",
-    },
-    {
-      link: "/blog",
-      linkText: "Blog",
-    },
-  ]
-  return (
-    <NavbarWrapper ref={modalRef}>
-      <NavBodyContent>
-        <AvatarLink to="/">
-          <AvatarSvgWrapper>
-            <AvatarIcon />
-          </AvatarSvgWrapper>
-          <AvatarTextContainer>
-            <AvatarText>Musango Wope</AvatarText>
-            <SubText>(Front Developer and Designer)</SubText>
-          </AvatarTextContainer>
-        </AvatarLink>
-
-        <NavItemsContainer>
-          {linksArray.map((linkItem, key) => (
-            <NavItem key={key}>
-              <NavItemLink to={linkItem.link}>{linkItem.linkText}</NavItemLink>
-            </NavItem>
-          ))}
-        </NavItemsContainer>
-
-        <MobileMenuIconButton
-          onClick={() => setMobileMenuActive(prev => !prev)}
-        >
-          <MenuIcon />
-        </MobileMenuIconButton>
-      </NavBodyContent>
-      <MobileMenuWrapper isActive={isMobileMenuActive}>
-        <MobileMenu menuItems={linksArray} />
-      </MobileMenuWrapper>
-    </NavbarWrapper>
-  )
-}
-
-Navbar.propTypes = {}
-Navbar.defaultProps = {}
 
 export default themed(Navbar)

@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Navbar from "./Navbar"
+import Navbar, {menuItems} from "./Navbar"
 import styled from "styled-components"
 import themed from "../functions/themed"
 import PrimaryButtonLink from "../elements/PrimaryButtonLink"
@@ -79,66 +79,29 @@ const StyledLayout = styled.div`
 `
 
 const Navigator = ({ path }) => {
-  const getFirstButtonLink = () => {
-    switch (path) {
-      case "/about/":
-        return {
-          path: "",
-          linkText: "",
-        }
-      case "/web-development/":
-        return {
-          path: "/about",
-          linkText: "About",
-        }
-      case "/design/":
-        return {
-          path: "/web-development",
-          linkText: "Web Dev",
-        }
-      case "/blog/":
-        return {
-          path: "/design",
-          linkText: "Design",
-        }
-      default:
-        return {}
-    }
-  }
+  const index = menuItems.findIndex(item => item.path === path);
 
-  const getLastButtonLink = () => {
-    switch (path) {
-      case "/about/":
-        return {
-          path: "/web-development",
-          linkText: "Web Dev",
-        }
-      case "/web-development/":
-        return {
-          path: "/design",
-          linkText: "Design",
-        }
-      case "/design/":
-        return {
-          path: "/blog",
-          linkText: "Blog",
-        }
-      case "/blog/":
-        return {
-          path: "",
-          linkText: "",
-        }
-      default:
-        return {}
+  const prevNavBtnData = (() => {
+    if(index === 0) {
+      return {};
     }
-  }
+    return menuItems[index -1];
+  })();
+
+  const nexNavBtnData = (() => {
+    if(index === menuItems.length -1) {
+     return {};
+    }
+    return menuItems[index + 1];
+  })();
+
 
   const getNavBtn = (
-    getButtonMethod = () => {},
+    navData = {},
     linkComponent = null,
     icon = React.Fragment
   ) => {
-    const { path = "", linkText = "" } = getButtonMethod()
+    const { path = "", linkText = "" } = navData;
     const LinkComponent = linkComponent
     const Icon = icon
     if (path && linkText) {
@@ -156,8 +119,8 @@ const Navigator = ({ path }) => {
 
   return (
     <React.Fragment>
-      {getNavBtn(getFirstButtonLink, PrevNavBtnLink, ChevronLeftIcon)}
-      {getNavBtn(getLastButtonLink, NextNavBtnLink, ChevronRightIcon)}
+      {getNavBtn(prevNavBtnData, PrevNavBtnLink, ChevronLeftIcon)}
+      {getNavBtn(nexNavBtnData, NextNavBtnLink, ChevronRightIcon)}
     </React.Fragment>
   )
 }
@@ -171,6 +134,7 @@ Navigator.defaultProps = {
 }
 
 const Layout = ({ children, path }) => {
+  console.log(path);
   return (
     <StyledLayout>
       <Navbar />
