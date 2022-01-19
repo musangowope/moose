@@ -1,11 +1,11 @@
 // gatsby-node.js
 const path = require("path")
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   const postTemplate = path.resolve("src/templates/blogTemplate.js")
 
-  return graphql(`
+  const res = await graphql(`
     {
       allBloggerPost {
         edges {
@@ -19,16 +19,16 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(res => {
-    if (res.errors) {
-      return Promise.reject(res.errors)
-    }
-    res.data.allBloggerPost.edges.forEach(({ node }) => {
-      createPage({
-        path: node.slug,
-        component: postTemplate,
-        context: node,
-      })
+  `);
+  res.data.allBloggerPost.edges.forEach(({ node }) => {
+    createPage({
+      path: node.slug,
+      component: postTemplate,
+      context: node,
     })
-  })
+  });
+
+  if (res.errors) {
+    return Promise.reject(res.errors)
+  }
 }
