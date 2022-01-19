@@ -2,8 +2,8 @@ import React from "react"
 import Preview from "../../videos/samestart-preview.mp4"
 import CaseStudyHeader from "../../images/same-start-case-study.jpg"
 import styled from "styled-components"
-import SEO from "../../components/SEO"
-import Layout from "../../components/LayoutWrapper"
+import Seo from "../../components/Seo"
+import Layout from "../../components/Layout"
 import Container from "../../components/Container"
 import Title from "../../elements/Title"
 import SecondaryTitle from "../../elements/SecondaryTitle"
@@ -37,7 +37,7 @@ const SameStartPage = () => {
   return (
     <Layout>
       <Container>
-        <SEO title="Same Start Case Study" />
+        <Seo title="Same Start Case Study" />
         <BackLink to="/web-development">Back to projects</BackLink>
         <br />
         <Title>Same Start Case Study</Title>

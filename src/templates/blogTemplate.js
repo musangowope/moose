@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/LayoutWrapper"
+import Layout from "../components/Layout"
 import Container from "../components/Container"
 import styled from "styled-components"
 import themed from "../functions/themed"
