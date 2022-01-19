@@ -1,6 +1,21 @@
 const axios = require("axios")
 const $ = require("cheerio")
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs  = `
+    type BloggerPost implements Node {
+      featureImage: String
+      id: String
+      published: Date
+      title: String
+      content: String
+      slug: String
+    }
+  `;
+  createTypes(typeDefs);
+}
+
 exports.sourceNodes = (
   { actions, createNodeId, createContentDigest },
   configOptions
