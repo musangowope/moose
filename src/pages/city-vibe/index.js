@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import Container from "../../components/Container"
 import Title from "../../elements/Title"
-import Layout from "../../components/Layout"
-import Seo from "../../components/Seo"
+import Layout from "../../components/LayoutWrapper"
+import SEO from "../../components/SEO"
 import CityVibeImg from "../../images/city-vibe-case-study.jpg"
 import { CaseStudyBanner } from "../same-start"
 import Paragraph from "../../elements/Paragraph"
@@ -41,7 +41,7 @@ export const BackLink = styled(Link)`
 const CityVibePage = () => {
   return (
     <Layout>
-      <Seo title="City Vibe Case Study" />
+      <SEO title="City Vibe Case Study" />
       <Container>
         <BackLink to="/web-development">Back to projects</BackLink>
         <br />

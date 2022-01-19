@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import Layout from "../components/Layout"
+import Layout from "../components/LayoutWrapper"
 import Container from "../components/Container"
 import themed from "../functions/themed"
 import Title from "../elements/Title"
 import Paragraph from "../elements/Paragraph"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 import BlogPostPreview from "../components/BlogPostPreview"
 
 const BlogGridLayout = styled.div`
@@ -22,7 +22,7 @@ const BlogGridLayout = styled.div`
 const BlogPage = ({ data, path }) => {
   return (
     <Layout path={path}>
-      <Seo title="Blog" />
+      <SEO title="Blog" />
       <Container>
         <Title>Blog Posts</Title>
         <Paragraph>

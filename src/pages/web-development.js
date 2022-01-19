@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/Layout"
+import Layout from "../components/LayoutWrapper"
 import styled from "styled-components"
 import Container from "../components/Container"
 import themed from "../functions/themed"
@@ -7,7 +7,7 @@ import SecondaryTitle from "../elements/SecondaryTitle"
 import Project from "../components/Project"
 import Paragraph from "../elements/Paragraph"
 import PrimaryButtonLink from "../elements/PrimaryButtonLink"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 
 const ProjectSubtitle = styled(SecondaryTitle)`
   font-size: ${props => props.theme.fontSizes[4]};
@@ -57,7 +57,7 @@ const CityVibeContent = () => (
 const WebDevPage = ({ path }) => {
   return (
     <Layout path={path}>
-      <Seo title="Web Development" />
+      <SEO title="Web Development" />
       <Container>
         <Project
           projectTitle="Same Start"

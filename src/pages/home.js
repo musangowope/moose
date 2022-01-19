@@ -1,13 +1,13 @@
 import React from "react"
 import LandingAvatarImg from "../images/landing-avatar.png"
 import HeartIcon from "../svgs/heart.inline.svg"
-import Layout from "../components/Layout"
+import Layout from "../components/LayoutWrapper"
 import Title from "../elements/Title"
 import styled from "styled-components"
 import Container from "../components/Container"
 import themed from "../functions/themed"
 import PrimaryButtonLink from "../elements/PrimaryButtonLink"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 import { NavHeight } from "../components/Navbar"
 
 const HomeTitle = styled(Title)`
@@ -72,7 +72,7 @@ const HomeContent = styled.div`
 const HomePage = () => {
   return (
     <Layout>
-      <Seo title="Home" />
+      <SEO title="Home" />
       <HomeContainer>
         <HomeContent>
           <AvatarImg src={LandingAvatarImg} alt="musango-wope" />

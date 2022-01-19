@@ -1,13 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import Layout from "../components/Layout"
+import Layout from "../components/LayoutWrapper"
 import Container from "../components/Container"
 import themed from "../functions/themed"
 import AboutMe from "../images/about-me.jpg"
 import Paragraph from "../elements/Paragraph"
 import SecondaryTitle from "../elements/SecondaryTitle"
 import Title from "../elements/Title"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 
 const SkillsContainer = styled.div`
   display: grid;
@@ -27,7 +27,7 @@ const AboutMeImage = styled.img`
 const AboutPage = ({ path }) => {
   return (
     <Layout path={path}>
-      <Seo title="About" />
+      <SEO title="About" />
       <Container>
         <Title>About Me</Title>
         <AboutMeImage src={AboutMe} />

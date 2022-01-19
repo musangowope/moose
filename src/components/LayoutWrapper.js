@@ -134,7 +134,7 @@ Navigator.defaultProps = {
   path: "",
 }
 
-const Layout = ({ children, path }) => {
+const LayoutWrapper = ({ children, path }) => {
   return (
     <StyledLayout>
       <Navbar />
@@ -144,11 +144,11 @@ const Layout = ({ children, path }) => {
   )
 }
 
-Layout.propTypes = {
+LayoutWrapper.propTypes = {
   path: PropTypes.string,
 }
-Layout.defaultProps = {
+LayoutWrapper.defaultProps = {
   path: "",
 }
 
-export default themed(Layout)
+export default themed(LayoutWrapper)
