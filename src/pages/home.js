@@ -69,7 +69,7 @@ const HomeContent = styled.div`
   text-align: center;
 `
 
-const HomePage = props => {
+const HomePage = () => {
   return (
     <Layout>
       <Seo title="Home" />
