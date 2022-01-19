@@ -57,6 +57,7 @@ const AboutPage = ({ path }) => {
             </ul>
             <ul>
               <li>React</li>
+              <li>Stencil JS and Web components</li>
               <li>React Native</li>
               <li>Gatsby</li>
               <li>CSS(SCSS) and Styled Components</li>
