@@ -46,22 +46,18 @@ const BlogPage = ({ data, path }) => {
 }
 
 export const query = graphql`
-  query BlogListQuery {
+  {
     allBloggerPost {
       edges {
         node {
-          content
-          published(formatString: "DD/MM/YY")
+          published
+          featureImage
           title
           slug
-          featureImage
         }
       }
     }
   }
 `
-
-BlogPage.propTypes = {}
-BlogPage.defaultProps = {}
 
 export default themed(BlogPage)
