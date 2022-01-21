@@ -14,8 +14,8 @@ module.exports = {
     {
       resolve: `gatsby-source-blogger`,
       options: {
-        blogger_api_key: process.env.GATSBY_BLOGGER_API_KEY,
-        blogger_id: process.env.GATSBY_BLOGGER_BLOG_ID,
+        blogger_api_key: "AIzaSyCFKjg5ZwSvYz69goMaVICRkhcCHiP_FUI",
+        blogger_id: "6944691970155595231",
       },
     },
     {
