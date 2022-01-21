@@ -10,9 +10,10 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "yarn install-plugin && gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "install-plugin": "cd ./plugins/gatsby-source-blogger && yarn"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.2",
