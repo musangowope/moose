@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-source-evernote",
+  "name": "gatsby-source-blogger",
   "version": "1.0.0",
   "description": "",
   "main": "gatsby-node.js",
@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "cheerio": "^1.0.0-rc.3",
     "evernote": "^2.0.5",
     "lodash": "^4.17.19"
   }

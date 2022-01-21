@@ -1,5 +1,5 @@
 const axios = require("axios")
-const $ = require("cheerio")
+const cheerio = require("cheerio");
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -26,7 +26,8 @@ exports.sourceNodes = (
 
   const processBlogPost = blogPost => {
     const nodeId = createNodeId(blogPost.id)
-    const featureImageSrc = $("img", blogPost.content).attr("src")
+    const $ = cheerio.load(blogPost.content)
+    const featureImageSrc = $("img").attr("src")
 
     const shapedData = {
       featureImage: featureImageSrc,

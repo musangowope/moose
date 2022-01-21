@@ -26,5 +26,18 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Musango Wope`,
+        short_name: `Web Developer`,
+        start_url: `/`,
+        background_color: `#FF6978`,
+        theme_color: `#FF6978`,
+        display: `minimal-ui`,
+        icon: `src/images/landing-avatar.png`, // This path is relative to the root of the site.
+        crossOrigin: `use-credentials`,
+      },
+    },
   ]
 };
