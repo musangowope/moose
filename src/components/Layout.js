@@ -144,11 +144,4 @@ const Layout = ({ children, path }) => {
   )
 }
 
-Layout.propTypes = {
-  path: PropTypes.string,
-}
-Layout.defaultProps = {
-  path: "",
-}
-
 export default themed(Layout)

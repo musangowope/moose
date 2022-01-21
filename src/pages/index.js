@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React  from "react"
 import { Router } from "@reach/router"
 import BlogPage from "./blog"
 import HomePage from "./home"
@@ -9,16 +9,14 @@ import CityVibePage from "./city-vibe"
 
 const IndexPage = () => {
   return (
-    <Fragment>
-      <Router>
-        <HomePage path="/" />
-        <BlogPage path="blog" />
-        <AboutPage path="about" />
-        <WebDevPage path="web-development" />
-        <SameStartPage path="same-start" />
-        <CityVibePage path="city-vibe" />
-      </Router>
-    </Fragment>
+    <Router>
+      <HomePage path="/" />
+      <BlogPage path="blog" />
+      <AboutPage path="about" />
+      <WebDevPage path="web-development" />
+      <SameStartPage path="same-start" />
+      <CityVibePage path="city-vibe" />
+    </Router>
   )
 }
 
