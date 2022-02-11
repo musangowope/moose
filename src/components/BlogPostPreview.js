@@ -21,17 +21,24 @@ const PostExcerpt = styled.div`
   padding: 20px;
 `
 
-const BlogPostPreview = ({ title, date, slug, img = null }) => (
-  <PostContainer>
-    <PostFeatureImg src={img} alt={title} />
-    <PostExcerpt>
-      <SecondaryTitle>{title}</SecondaryTitle>
-      <TertiaryTitle>Date Written: {date}</TertiaryTitle>
-      <Link to={`/${slug}`}>
-        <TertiaryTitle>Read more</TertiaryTitle>
-      </Link>
-    </PostExcerpt>
-  </PostContainer>
-)
+const BlogPostPreview = ({ title, date, slug, img = null }) => {
+  const today = new Date(date);
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  const yyyy = today.getFullYear();
+  const presentationalDate = `${dd}/${mm}/${yyyy}`
+  return (
+    <PostContainer>
+      <PostFeatureImg src={img} alt={title} />
+      <PostExcerpt>
+        <SecondaryTitle>{title}</SecondaryTitle>
+        <TertiaryTitle>Date Written: {presentationalDate}</TertiaryTitle>
+        <Link to={`/${slug}`}>
+          <TertiaryTitle>Read more</TertiaryTitle>
+        </Link>
+      </PostExcerpt>
+    </PostContainer>
+  )
+}
 
 export default themed(BlogPostPreview)
