@@ -7,13 +7,13 @@ import themed from "../functions/themed"
 import Title from "../elements/Title"
 
 const StyledLink = styled(Link)`
-  font-size: ${props => props.theme.fontSizes[4]};
+  font-size: ${props => props.theme.fontSizes[3]};
 `
 
 const StyledReactMarkdown = styled.div`
-  font-size: ${props => props.theme.fontSizes[4]} !important;
+  font-size: ${props => props.theme.fontSizes[3]} !important;
   * {
-    font-size: ${props => props.theme.fontSizes[4]} !important;
+    font-size: ${props => props.theme.fontSizes[3]} !important;
   }
 
   a {
@@ -24,37 +24,37 @@ const StyledReactMarkdown = styled.div`
   h1 * {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: ${props => props.theme.fontSizes[7]} !important;
+    font-size: ${props => props.theme.fontSizes[6]} !important;
   }
 
   h2,
   h2 * {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: ${props => props.theme.fontSizes[6]} !important;
+    font-size: ${props => props.theme.fontSizes[5]} !important;
   }
   h3,
   h3 * {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: ${props => props.theme.fontSizes[5]} !important;
+    font-size: ${props => props.theme.fontSizes[4]} !important;
   }
 
   h4,
   h4 * {
-    font-size: ${props => props.theme.fontSizes[4]} !important;
+    font-size: ${props => props.theme.fontSizes[3]} !important;
   }
 
   h5,
   h5 * {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: ${props => props.theme.fontSizes[3]} !important;
+    font-size: ${props => props.theme.fontSizes[2]} !important;
   }
 
   h6,
   h6 * {
-    font-size: ${props => props.theme.fontSizes[2]} !important;
+    font-size: ${props => props.theme.fontSizes[1]} !important;
   }
 
   pre {
