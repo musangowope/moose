@@ -29,7 +29,7 @@ const MobileMenu = ({ menuItems }) => {
   return (
     <MobileMenuContainer>
       {menuItems.map((item, index) => (
-        <MenuItemLink key={index} to={item.link}>
+        <MenuItemLink key={index} to={item.path}>
           {item.linkText}
         </MenuItemLink>
       ))}
