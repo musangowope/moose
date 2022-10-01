@@ -6,6 +6,8 @@ import AboutPage from "./about"
 import WebDevPage from "./web-development"
 import SameStartPage from "./same-start"
 import CityVibePage from "./city-vibe"
+import GeomusicPage from "./geomusic"
+import Geomusic from "./geomusic"
 
 const IndexPage = () => {
   return (
@@ -16,6 +18,7 @@ const IndexPage = () => {
       <WebDevPage path="web-development" />
       <SameStartPage path="same-start" />
       <CityVibePage path="city-vibe" />
+      <GeomusicPage path="geomusic" />
     </Router>
   )
 }

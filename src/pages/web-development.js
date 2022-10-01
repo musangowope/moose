@@ -19,13 +19,25 @@ const ViewCaseStudyBtn = styled(PrimaryButtonLink)`
   font-size: ${props => props.theme.fontSizes[4]};
 `
 
+const GeomusicContent = () => (
+  <>
+    <ProjectSubtitle>About Project</ProjectSubtitle>
+    <Paragraph>
+      Geomusic is an application that allows you create music playlist place it on a geographical location.
+      I built this small side project as a tech portfolio piece to showcase my skills as a software engineer.
+    </Paragraph>
+
+    <ViewCaseStudyBtn to="/geomusic">View Case Study</ViewCaseStudyBtn>
+  </>
+)
+
 const SameStartContent = () => (
   <React.Fragment>
     <ProjectSubtitle>About Project</ProjectSubtitle>
     <Paragraph>
       Same Start was an edtech project that I co-founded and developed with my
       business partner. We worked on this project in our
-      spare time outside our regular do jobs. Same Start aimsd to bridge the
+      spare time outside our regular do jobs. Same Start aimed to bridge the
       education language gap and give every learner the same start by providing
       interactive and gamified translated education content with corresponding
       quizzes.
@@ -59,6 +71,11 @@ const WebDevPage = ({ path }) => {
     <Layout path={path}>
       <Seo title="Web Development" />
       <Container>
+        <Project
+          projectTitle="Geomusic"
+          status="Done"
+          projectBodyContent={GeomusicContent}
+        />
         <Project
           projectTitle="Same Start"
           status="Discontinued"
