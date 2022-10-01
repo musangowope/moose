@@ -65,4 +65,4 @@ const GeomusicPage = themed(() => {
   )
 })
 
-export default GeomusicPage()
+export default GeomusicPage
