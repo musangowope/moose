@@ -25,6 +25,10 @@ export const menuItems = [
     path: "/blog/",
     linkText: "Blog",
   },
+  {
+    path: "/youtube/",
+    linkText: "Youtube",
+  },
 ];
 
 const Navbar = () => {
@@ -182,7 +186,7 @@ const AvatarSvgWrapper = styled.div`
 const NavItemsContainer = styled.div`
   display: grid;
   grid-auto-rows: minmax(${NavHeight}, auto);
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   column-gap: 10px;
   @media screen and (max-width: ${props => props.theme.breakpoints.lg}) {
     display: none;

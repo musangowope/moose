@@ -9,12 +9,14 @@ const ProjectHeader = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
   border: 2px solid ${props => props.theme.colors.tertiary};
-  
 `
 
-const ProjectTitle = styled(SecondaryTitle)`
+const ProjectTitle = styled.div`
   color: ${props => props.theme.colors.tertiary};
+  font-size: ${props => props.theme.fontSizes[4]};
+  font-weight: bold;
   margin-bottom: 0;
 `
 const ProjectBody = styled.div`

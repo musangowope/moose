@@ -30,9 +30,9 @@ const BlogPage = ({ data, path }) => {
           my web development create thus far. Stay tuned for more blog posts
         </Paragraph>
         <BlogGridLayout>
-          {data.allBloggerPost.edges.map(({ node }) => (
+          {data.allBloggerPost.edges.map(({ node }, key) => (
             <BlogPostPreview
-              key={node.id}
+              key={key}
               title={node.title}
               date={node.published}
               slug={node.slug}
