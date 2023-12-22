@@ -7,7 +7,6 @@ import AboutMe from "../images/about-me.jpg"
 import Paragraph from "../elements/Paragraph"
 import SecondaryTitle from "../elements/SecondaryTitle"
 import Title from "../elements/Title"
-import Seo from "../components/Seo"
 
 const SkillsContainer = styled.div`
   display: grid;
@@ -27,7 +26,6 @@ const AboutMeImage = styled.img`
 const AboutPage = ({ path }) => {
   return (
     <Layout path={path}>
-      <Seo title="About" />
       <Container>
         <Title>About Me</Title>
         <AboutMeImage src={AboutMe} />

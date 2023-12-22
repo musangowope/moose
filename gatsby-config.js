@@ -1,22 +1,44 @@
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
+
 require("dotenv").config({
   path: `.env`,
 })
 
 module.exports = {
   siteMetadata: {
-    title: `Musango Wope Front Engineer`,
-    description: `Front End Engineer and UI/UX Enthusiast`,
-    author: `@Musango Wope`,
-    keywords: "Front End Engineer, Javascript, HTML, SCSS/CSS, Design",
+    siteUrl: "https://www.yourdomain.tld",
+    title: "moose",
   },
   plugins: [
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-source-blogger`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        blogger_api_key: process.env.GATSBY_BLOGGER_API_KEY,
-        blogger_id: process.env.GATSBY_BLOGGER_BLOG_ID,
+        icon: "src/images/icon.png",
       },
+    },
+    "gatsby-transformer-remark",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
     },
     {
       resolve: "gatsby-plugin-react-svg",
@@ -26,18 +48,13 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-styled-components",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-blogger`,
       options: {
-        name: `Musango Wope`,
-        short_name: `Web Developer`,
-        start_url: `/`,
-        background_color: `#FF6978`,
-        theme_color: `#FF6978`,
-        display: `minimal-ui`,
-        icon: `src/images/landing-avatar.png`, // This path is relative to the root of the site.
-        crossOrigin: `use-credentials`,
+        blogger_api_key: process.env.GATSBY_BLOGGER_API_KEY,
+        blogger_id: process.env.GATSBY_BLOGGER_BLOG_ID,
       },
     },
-  ]
-};
+  ],
+}
