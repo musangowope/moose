@@ -7,7 +7,6 @@ import SecondaryTitle from "../elements/SecondaryTitle"
 import Project from "../components/Project"
 import Paragraph from "../elements/Paragraph"
 import PrimaryButtonLink from "../elements/PrimaryButtonLink"
-import Seo from "../components/Seo"
 
 const ProjectSubtitle = styled(SecondaryTitle)`
   font-size: ${props => props.theme.fontSizes[4]};
@@ -69,7 +68,6 @@ const CityVibeContent = () => (
 const WebDevPage = ({ path }) => {
   return (
     <Layout path={path}>
-      <Seo title="Web Development" />
       <Container>
         <Project
           projectTitle="Geomusic"

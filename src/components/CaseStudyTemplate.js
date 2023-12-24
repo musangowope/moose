@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 import themed from "../functions/themed"
 import Title from "../elements/Title"
 import Layout from "./Layout"
-import Seo from "./Seo"
 import PrimaryButtonLink from "../elements/PrimaryButtonLink"
 
 
@@ -46,7 +45,6 @@ const CaseStudyTemplate = ({
 }) => {
   return (
     <Layout>
-      <Seo title={`${title} Case Study`} />
       <Container>
         <BackLink to="/web-development">Back to projects</BackLink>
         <br />

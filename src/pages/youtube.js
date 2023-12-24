@@ -1,5 +1,4 @@
 import React from "react"
-import Seo from "../components/Seo"
 import Container from "../components/Container"
 import Title from "../elements/Title"
 import Paragraph from "../elements/Paragraph"
@@ -41,7 +40,6 @@ const VideoCardAction = styled.a`
 const YoutubePage = ({ path }) => {
   return (
     <Layout path={path}>
-      <Seo title="Youtube" />
       <Container>
         <Title>Youtube channel for coding tutorials</Title>
         <Paragraph>
