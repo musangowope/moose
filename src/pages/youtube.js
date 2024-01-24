@@ -53,9 +53,8 @@ const YoutubePage = ({ path }) => {
           >
             CodingWithMoose
           </a>
-          . The channel contains videos tutorials on how to code various UI
-          Elements. So far I have only made two videos😝. I do plan to make more
-          when I have time.
+          . The channel contains one video tutorial at the moment on how to code
+          Floating Field. I do plan to make more when I have time.
         </Paragraph>
 
         <SecondaryTitle>Videos</SecondaryTitle>
@@ -75,23 +74,6 @@ const YoutubePage = ({ path }) => {
               rel="noreferrer noopener"
             >
               Coding a Floating Field
-            </VideoCardAction>
-          </VideoCard>
-          <VideoCard>
-            <iframe
-              width="100%"
-              src="https://www.youtube.com/embed/OnQv81Ftst0?controls=0"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-            <VideoCardAction
-              href="https://www.youtube.com/watch?v=OnQv81Ftst0"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Coding an OTP Field
             </VideoCardAction>
           </VideoCard>
         </VideoWrapper>
